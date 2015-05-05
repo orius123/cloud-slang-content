@@ -9,8 +9,8 @@
 # Creates a Docker container.
 #
 # Inputs:
-#   - imageID - Docker image that will be assigned to the container
-#   - containerName - container name
+#   - imageID - Docker image that will be assigned to the container(name or ID)
+#   - containerName - optional - container name
 #   - cmdParams - optional - command parameters
 #   - containerCmd - optional - container command
 #   - host - Docker machine host
@@ -37,13 +37,15 @@ operation:
   name: create_container
   inputs:
     - imageID
-    - containerName
+    - containerName:
+        required: false
     - cmdParams:
         default: "''"
         required: false
     - containerCmd:
         default: "''"
         required: false
+    - nameParam: "'' if 'containerName' not in locals() else ' --name ' + str(containerName)"
     - host
     - port:
         default: "'22'"
@@ -52,7 +54,7 @@ operation:
     - privateKeyFile:
         default: "''"
     - command:
-        default: "'docker run -d --name ' + containerName + ' ' + cmdParams + ' ' + imageID + ' ' + containerCmd"
+        default: "'docker run -d ' + nameParam + ' ' + cmdParams + ' ' + imageID + ' ' + containerCmd"
         overridable: false
     - arguments:
         default: "''"
