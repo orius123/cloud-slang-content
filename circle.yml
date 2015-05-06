@@ -24,6 +24,7 @@ test:
   post:
     - docker ps -a
     - docker stop $(docker ps -a -q)
+    - ls
     #- docker rm $(docker ps -a -q)
 
 general:
