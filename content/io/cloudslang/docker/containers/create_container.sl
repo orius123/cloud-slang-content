@@ -38,6 +38,9 @@ operation:
   inputs:
     - imageID
     - containerName
+    - run_as_sudo:
+        default: "False"
+    - sudo_prefix: " '' if bool(run_as_sudo) else 'sudo '"
     - cmdParams:
         default: "''"
         required: false
@@ -52,7 +55,7 @@ operation:
     - privateKeyFile:
         default: "''"
     - command:
-        default: "'docker run -d --name ' + containerName + ' ' + cmdParams + ' ' + imageID + ' ' + containerCmd"
+        default: "sudo_prefix + 'docker run -d --name ' + containerName + ' ' + cmdParams + ' ' + imageID + ' ' + containerCmd"
         overridable: false
     - arguments:
         default: "''"
