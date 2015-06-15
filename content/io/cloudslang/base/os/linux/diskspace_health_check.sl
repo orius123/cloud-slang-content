@@ -13,12 +13,12 @@
 #   - docker_username - Docker machine username
 #   - docker_password - Docker machine password
 #   - private_key_file - path to the private key file - Default: none
-#   - percentage - Example: 50%
+#   - percentage - maximum desired percentage of free disk space - Example: 50%
 #   - timeout - optional - time in milliseconds to wait for the command to complete
 # Results:
-#   - SUCCESS - disk space less than percentage
+#   - SUCCESS - disk space is less than percentage
 #   - FAILURE - error occurred
-#   - NOT_ENOUGH_DISKSPACE - disk space more than percentage
+#   - NOT_ENOUGH_DISKSPACE - disk space is greater than or equal to percentage
 ####################################################
 
 namespace: io.cloudslang.base.os.linux
