@@ -9,20 +9,20 @@
 # Gets the IP of the specified Docker container.
 #
 # Inputs:
-#   - containerName - container name
+#   - container_name - container name
 #   - host - Docker machine host
 #   - port - optional - SSH port - Default: 22
 #   - username - Docker machine username
 #   - password - Docker machine password
-#   - privateKeyFile - optional - absolute path to private key file - Default: none
-#   - arguments - optional - arguments to pass to the command; Default: none
-#   - characterSet - optional - character encoding used for input stream encoding from target machine Valid: SJIS, EUC-JP, UTF-8 - Default: UTF-8
+#   - private_key_file - optional - absolute path to private key file - Default: none
+#   - arguments - optional - arguments to pass to the command - Default: none
+#   - characterSet - optional - character encoding used for input stream encoding from target machine - Valid: SJIS, EUC-JP, UTF-8 - Default: UTF-8
 #   - pty - optional - whether to use PTY - Valid: true, false - Default: false
 #   - timeout - optional - time in milliseconds to wait for command to complete - Default: 90000
-#   - closeSession - optional - if false SSH session will be cached for future calls during the life of the flow, if true the SSH session used will be closed; Valid: true, false - Default: false
+#   - closeSession - optional - if false SSH session will be cached for future calls during the life of the flow, if true the SSH session used will be closed - Valid: true, false - Default: false
+#   - agentForwarding - optional - session object that holds the connection if the close session is false
 # Outputs:
-#   - returnResult - IP of the specified container
-#   - error_message - error message
+#   - returnResult - IP of specified container
 # Results:
 #   - SUCCESS
 #   - FAILURE
