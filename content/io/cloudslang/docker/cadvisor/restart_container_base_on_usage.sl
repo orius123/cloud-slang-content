@@ -10,13 +10,13 @@
 #
 # Inputs:
 #   - container - name or ID of Docker container that runs MySQL
-#   - Host - Docker machine host
+#   - host - Docker machine host
 #   - cadvisor_port - optional - port used for cAdvisor - Default: 8080
 #   - machine_connect_port - optional - port to use to connect to machine running Docker - Default: 22
 #   - username - Docker machine username
 #   - password - Docker machine password
-#   - privateKeyFile - optional - path to the private key file - Default: none
-#   - rule - optional - Python query to determine if the resource usages is high
+#   - privateKeyFile - optional - absolute path to the private key file - Default: none
+#   - rule - optional - Python query to determine if resource usage is high
 # Results:
 #   - SUCCESS - successful (returnCode == '0')
 #   - FAILURE - otherwise
