@@ -16,13 +16,14 @@
 #    - username - username to connect as
 #    - password - optional - password of user
 #    - arguments - optional - arguments to pass to the command
-#    - privateKeyFile - optional - path to the private key file
-#    - timeout - optional - time in milliseconds to wait for the command to complete - Default: 90000 ms
+#    - privateKeyFile - optional - absolute path to the private key file
+#    - timeout - optional - time in milliseconds to wait for the command to complete - Default: 90000
 #    - characterSet - optional - character encoding used for input stream encoding from the target machine - Valid: SJIS, EUC-JP, UTF-8 - Default: UTF-8
-#    - closeSession - optional - if false the ssh session will be cached for future calls of this operation during the life of the flow, if true the ssh session used by this operation will be closed - Valid: true, false - Default: false
-#    - agentForwarding - optional - the sessionObject that holds the connection if the close session is false
+#    - closeSession - optional - if false the SSH session will be cached for future calls of this operation during the life of the flow, if true the SSH session used by this operation will be closed - Valid: true, false - Default: false
+#    - agentForwarding - optional - the session object that holds the connection if the close session is false
 # Outputs:
 #    - returnResult - STDOUT of the remote machine in case of success or the cause of the error in case of exception
+#    - return_code - return code
 #    - standard_out - STDOUT of the machine in case of successful request, null otherwise
 #    - standard_err - STDERR of the machine in case of successful request, null otherwise
 #    - exception - contains the stack trace in case of an exception
