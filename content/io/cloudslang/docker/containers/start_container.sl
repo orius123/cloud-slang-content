@@ -19,8 +19,8 @@
 #   - arguments - optional - arguments to pass to command - Default: none
 #   - characterSet - optional - character encoding used for input stream encoding from target machine - Valid: SJIS, EUC-JP, UTF-8 - Default: UTF-8
 #   - pty - optional - whether to use PTY - Valid: true, false - Default: false
-#   - timeout - optional - time in milliseconds to wait for the command to complete; Default: 90000 ms
-#   - closeSession - optional - if false SSH session will be cached for future calls during the life of the flow, if true the SSH session used will be closed; Valid: true, false - Default: false
+#   - timeout - optional - time in milliseconds to wait for the command to complete - Default: 90000 ms
+#   - closeSession - optional - if false SSH session will be cached for future calls during the life of the flow, if true the SSH session used will be closed - Valid: true, false - Default: false
 # Outputs:
 #   - container_id - ID of the container that was deleted
 #   - error_message - error message
