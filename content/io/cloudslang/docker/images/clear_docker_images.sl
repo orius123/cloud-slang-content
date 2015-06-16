@@ -10,7 +10,7 @@
 #
 # Inputs:
 #   - host - Docker machine host
-#   - port - optional - SSH port - required: false
+#   - port - optional - SSH port
 #   - username - Docker machine username
 #   - password - Docker machine password
 #   - images - list of Docker images to be deleted - Format: space delimited
