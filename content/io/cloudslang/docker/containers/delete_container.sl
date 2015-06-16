@@ -9,8 +9,8 @@
 # Deletes the specified Docker container.
 #
 # Inputs
-#   - containerID - ID of the container to be deleted
-#   - cmdParams - optional - command parameters - Default: none
+#   - container_id - ID of the container to be deleted
+#   - cmd_params - optional - command parameters - Default: none
 #   - host - Docker machine host
 #   - port - optional - SSH port - Default: 22
 #   - username - Docker machine username
@@ -21,6 +21,7 @@
 #   - pty - optional - whether to use PTY - Valid: true, false - Default: false
 #   - timeout - optional - time in milliseconds to wait for the command to complete - Default: 90000
 #   - closeSession - optional - if false SSH session will be cached for future calls during the life of the flow, if true the SSH session used will be closed; Valid: true, false - Default: false
+#   - agentForwarding - optional - the session object that holds the connection if the close session is false
 # Outputs:
 #   - result - ID of the container that was deleted
 #   - standard_err - error message
