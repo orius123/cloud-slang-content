@@ -44,7 +44,8 @@ flow:
     - port:
         required: false
     - username
-    - password
+    - password:
+        required: false
     - privateKeyFile:
         required: false
     - arguments:
