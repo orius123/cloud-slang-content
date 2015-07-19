@@ -26,6 +26,7 @@
    - unzip cslang-builder.zip -d cslang-builder
    - chmod +x cslang-builder/bin/cslang-builder
    - docker run --privileged -d -p 4444 -p 49153:22 -e PORT=4444 --name docker_host_ssh orius123/dind-ssh
+   - docker ps -a
    - ./cslang-builder/bin/cslang-builder -ts ${SUITE},\!default -cov
      
  after_failure: cat builder.log
