@@ -11,7 +11,7 @@ testDocker_clear_container_Success:
   description: Tests that clear containers works
   testFlowPath: io.cloudslang.docker.containers.test_clear_container
   inputs:
-    - host: localhost
+    - host: 0.0.0.0
     - port: "49153"
     - username: root
     - password: screencast

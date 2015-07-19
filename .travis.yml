@@ -13,24 +13,20 @@
  
  env:
   global:
-    - UML_DOCKERCOMPOSE=0
-    - UML_FIG=0
     - JAVA_OPTS="-XX:MaxPermSize=512m"
-    - BRANCH=develop 
-    - DOCKER_BACKEND_FS=tmpfs  
-    - DOCKER_STORAGE_DRIVER=aufs
-    - SKIP_BRANCH_CHECKING=true
   matrix:
     - SUITE=containers
     - SUITE=images
     - SUITE=docker-misc
  
  script:
-   - curl -sLo - https://raw.githubusercontent.com/orius123/travis-docker/develop/install.sh | sh -xe
+   - source <(curl -sL https://raw.githubusercontent.com/zuazo/kitchen-in-travis/master/scripts/start_docker.sh)
+   - docker info
    - wget https://github.com/CloudSlang/cloud-slang/releases/download/cloudslang-0.7.42/cslang-builder.zip
    - unzip cslang-builder.zip -d cslang-builder
    - chmod +x cslang-builder/bin/cslang-builder
-   - ./run 'docker run --privileged -d -p 4444 -p 49153:22 -e PORT=4444 --name docker_host_ssh orius123/dind-ssh &&
-     ./cslang-builder/bin/cslang-builder -ts ${SUITE},\!default -cov'
+   - docker run --privileged -d -p 4444 -p 49153:22 -e PORT=4444 --name docker_host_ssh orius123/dind-ssh
+   - docker ps -a
+   - ./cslang-builder/bin/cslang-builder -ts ${SUITE},\!default -cov
      
  after_failure: cat builder.log
